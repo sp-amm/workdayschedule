@@ -9,23 +9,30 @@ $("#currentDay").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
 var currentHour = moment().hour();
 console.log(currentHour);
 console.log(this);
-var plannerHour = $('table > tbody > tr').attr("id");
+
+$('table > tbody > tr').each(function(){
+var plannerHour = $(this).attr("id");
 console.log(plannerHour);
+});
 
-function pastPresentColours(){
+
+//function pastPresentColours(){
    
-    $('table > tbody > tr').each(function(){
+ //   $('table > tbody > tr').each(function(){
         
-     var plannerHour = $(this).attr("id");
-       console.log(plannerHour); 
-
-       if (plannerHour == currentHour){
-           $(this).addClass("present")}
-         else if ( plannerHour > currentHour){
-            $(this.addClass("past"))}
-            else {$(this.addClass("future"))}
-    })
-};
+  //   var plannerHour = parseInt($(this).attr("id"));
+   //    console.log(plannerHour); 
+//
+    //   if (plannerHour == 10){
+    //       $('table > tbody > tr').addClass("present");
+    //    }
+    //     else if ( plannerHour > currentHour){
+   //         $('table > tbody > tr').addClass("future");
+    //    }
+    //        else {$('table > tbody > tr').addClass("past");
+     //   }
+  //  })
+//};
 
 
 //var currentTime = moment().get('hour')
