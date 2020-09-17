@@ -8,13 +8,6 @@ $("#currentDay").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
 
 var currentHour = moment().hour();
 console.log(currentHour);
-console.log(this);
-
-
-$('table > tbody > tr').each(function(){
-var plannerHour = $(this).attr("id");
-console.log(plannerHour);
-});
 
 
 function pastPresentColours(){
@@ -24,18 +17,20 @@ function pastPresentColours(){
         console.log(plannerHour);
         
 
-    if (plannerHour == 10){
-           $('table > tbody > tr').addClass("present");
+    if (plannerHour == currentHour){
+           $(this).addClass("present");
         }
-         else if ( plannerHour > currentHour){
-           $('table > tbody > tr').addClass("future");
-       }
-            else {$('table > tbody > tr').addClass("past");
-        }
+            else if ( plannerHour > currentHour){
+                $(this).addClass("future");
+            }
+                else {$(this).addClass("past");
+                }
     });
 };
 
 pastPresentColours()
+
+
 //var currentTime = moment().get('hour')
 
 
