@@ -10,31 +10,32 @@ var currentHour = moment().hour();
 console.log(currentHour);
 console.log(this);
 
+
 $('table > tbody > tr').each(function(){
 var plannerHour = $(this).attr("id");
 console.log(plannerHour);
 });
 
 
-//function pastPresentColours(){
+function pastPresentColours(){
    
- //   $('table > tbody > tr').each(function(){
+    $('table > tbody > tr').each(function(){
+        var plannerHour = $(this).attr("id");
+        console.log(plannerHour);
         
-  //   var plannerHour = parseInt($(this).attr("id"));
-   //    console.log(plannerHour); 
-//
-    //   if (plannerHour == 10){
-    //       $('table > tbody > tr').addClass("present");
-    //    }
-    //     else if ( plannerHour > currentHour){
-   //         $('table > tbody > tr').addClass("future");
-    //    }
-    //        else {$('table > tbody > tr').addClass("past");
-     //   }
-  //  })
-//};
 
+    if (plannerHour == 10){
+           $('table > tbody > tr').addClass("present");
+        }
+         else if ( plannerHour > currentHour){
+           $('table > tbody > tr').addClass("future");
+       }
+            else {$('table > tbody > tr').addClass("past");
+        }
+    });
+};
 
+pastPresentColours()
 //var currentTime = moment().get('hour')
 
 
