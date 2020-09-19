@@ -45,7 +45,7 @@ $("button").on("click", function(event){
  $('table > tbody > tr').each(function(){
     var task = localStorage.getItem($(this).attr("id")); 
     console.log(task); 
-    $(this).find('input').text(task);
+    $(this).find('input').val(task);
  })   
    
 
