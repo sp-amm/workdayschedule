@@ -7,8 +7,6 @@ $("#currentDay").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
 //Moving colours of scheduler to reflect current time
 
 var currentHour = moment().hour();
-//var currentHour = 12;
-console.log(currentHour);
 
 
 function pastPresentColours(){
@@ -16,7 +14,6 @@ function pastPresentColours(){
  //Parent child selector info for the jquery loop from Fabrizio Calderan at https://stackoverflow.com/questions/10431987/jquery-each-loop-in-table-row https://api.jquery.com/child-selector/
     $('table > tbody > tr').each(function(){
         var plannerHour = $(this).attr("id");
-        console.log(plannerHour);
         
 
     if (plannerHour == currentHour){
@@ -42,8 +39,7 @@ $("button").on("click", function(event){
 function showTasks(){ 
 
     $('table > tbody > tr').each(function(){
-        var task = localStorage.getItem($(this).attr("id")); 
-        console.log(task); 
+        var task = localStorage.getItem($(this).attr("id"));  
         $(this).find('input').val(task);
     });   
 };
