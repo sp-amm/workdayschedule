@@ -1,8 +1,11 @@
 
 $(document).ready(function(){
 
-//Date in jumbotron
-$("#currentDay").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
+//Date in jumbotron with setInterval to keep updated
+setInterval(() => {
+ $("#currentDay").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));   
+}, 1000);
+
 
 //Moving colours of scheduler to reflect current time
 
