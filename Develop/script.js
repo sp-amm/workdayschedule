@@ -51,10 +51,10 @@ function showTasks(){
 showTasks();
 
 //function to clear the local storage when the day ends after midnight
-if(currentHour === 12){
+$("#clear").on('click', function(){
    localStorage.clear()
    showTasks();
-};
+});
 
 
 });
