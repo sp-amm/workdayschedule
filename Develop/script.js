@@ -1,16 +1,14 @@
 
 $(document).ready(function(){
 
-//Date in jumbotron with setInterval to keep updated
+//Date in jumbotron with setInterval to keep it updated in browser
 setInterval(() => {
  $("#currentDay").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));   
 }, 1000);
 
 
 //Moving colours of scheduler to reflect current time
-
 var currentHour = moment().hour();
-
 
 function pastPresentColours(){
    
@@ -33,7 +31,7 @@ function pastPresentColours(){
 pastPresentColours()
 
 
-//puts the scheduler data into the local storage
+//puts the scheduler data into the local storage - JQuery Forum for info re using .closest and .find - from Kevin B at https://forum.jquery.com/topic/getting-the-value-of-an-input-using-closest
 $("button").on("click", function(event){
     localStorage.setItem($(event.target).closest('tr').attr("id"), $(event.target).closest('tr').find('input').val())});
 
@@ -49,7 +47,7 @@ function showTasks(){
 
 showTasks();
 
-//function to clear the local storage when the day ends after midnight
+//Clear button to clear all tasks from local storage if needed
 $("#clear").on('click', function(){
    localStorage.clear()
    showTasks();
