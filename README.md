@@ -9,7 +9,7 @@ to store input data into local storage. Tasks are required to be displayed upon 
 All acceptance criteria as described below in the original Homework README Instructions are met.
 
 
-
+<img src=Assets/Capture1.JPG>
 
 ____________________________
 Homework Instructions:
