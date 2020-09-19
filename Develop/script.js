@@ -1,5 +1,5 @@
 
-
+$(document).ready(function(){
 
 //Date in jumbotron
 $("#currentDay").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
@@ -30,13 +30,23 @@ function pastPresentColours(){
 
 pastPresentColours()
 
+//Saving calendar entries into local storage
 
-//var currentTime = moment().get('hour')
+//console log to find the data
+$("button").on("click", function(event){console.log($(event.target).closest('tr').find('input').val())});
 
+$("button").on("click", function(event){console.log($(event.target).closest('tr').attr("id"))});
 
-//})
-//for (var i = 0; i<= 8; i++){
-   // if $()
-   // $("#"+currentHour).addClass(".present");
-   // console.log("#"+currentHour)
-//}
+//puts the scheduler data into the local storage
+$("button").on("click", function(event){
+    localStorage.setItem($(event.target).closest('tr').attr("id") + ":", $(event.target).closest('tr').find('input').val())});
+
+//Getting the values from local storage to to ensure they are there after refresh
+    localStorage.getItem()
+
+//function to clear the local storage when the day ends after midnight
+//if(currentHour > 01 && currentHour > 08){
+//    localStorage.clear()};
+
+});
+
